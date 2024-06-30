@@ -38,7 +38,6 @@ formEL.addEventListener('submit', e => {
                 return;
             }
             imageTemplate(hits);
-            console.log(hits);
             hideLoader();
             formEL.reset();
         }).catch(err => { console.log(err); });
