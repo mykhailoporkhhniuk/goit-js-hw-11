@@ -21,6 +21,16 @@ formEL.addEventListener('submit', e => {
     e.preventDefault();
     const userImg = inputEl.value.trim();
     showLoader();
+    if (userImg === '') {
+        ulElem.innerHTML = '';
+        iziToast.error({
+            title: '',
+            message: 'Enter query to see rezults!',
+            position: 'topRight',            
+        })
+        hideLoader();
+        return;
+    }
     getImage(userImg)
         .then(({ hits }) => {
             if (hits.length === 0) {
